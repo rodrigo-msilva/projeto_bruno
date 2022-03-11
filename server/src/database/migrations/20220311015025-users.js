@@ -8,12 +8,13 @@ module.exports = {
         primaryKey: true
       },
       nome:{
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(160),
         allowNull: false,
       },
       login:{
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(100),
         allowNull: false,
+        unique: true
       },
       senha:{
         type: Sequelize.STRING,
@@ -22,9 +23,10 @@ module.exports = {
       email:{
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true
       },
       hierarquia:{
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
       created_at:{
