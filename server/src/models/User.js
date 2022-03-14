@@ -62,6 +62,10 @@ class User extends Model {
                     },
                 },
             },
+            status: {
+                type: Sequelize.STRING,
+                defaultValue: "ATIVO",
+            }
         }, {
             sequelize,
         })
@@ -73,7 +77,17 @@ class User extends Model {
         })
         return this;
     }
+    passwordIsValid(pwd) {
+        return bcryptjs.compare(pwd, this.senha)
+    }
 
+    isActive(sts) {
+        if (sts == "ATIVO") {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 export default User;

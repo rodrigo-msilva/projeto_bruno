@@ -2,8 +2,12 @@ import User from "../models/User";
 
 class HomeController {
     async index(req, res) {
-        res.json({
-            tudoCerto: true
+        return res.json({
+            tudoCerto: true,
+            id: req.userId,
+            nome: req.username,
+            email: req.userEmail,
+            hierarquia: req.userHierarchy
         })
     }
 }
