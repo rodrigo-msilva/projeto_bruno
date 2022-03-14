@@ -61,32 +61,43 @@ class UserController {
                 errors: err.errors.map(error => error.message)
             })
         }   
-    }
-    // Delete
-    async delete(req,res) {
-        try {
-            if(!req.params.id){
-                return res.status(400).json({
-                    errors: ['ID não enviado']
-                })
-            }
-            const {id} = req.params;
-            const user = await User.findByPk(id)
-            const data = req.body
-            if(!user){
-                return res.status(400).json({
-                    errors: ['Usuário não encontrado']
-                })
-            }
-            const novosDados = await user.destroy();
-            return res.json(user)
-        }catch(err){
-            return res.status(400).json({
-                errors: err.errors.map(error => error.message)
-            })
-        }  
-    }
+    }  
 
 }
 
 export default new UserController();
+
+
+
+
+
+
+
+
+
+/*
+ // Delete
+ async delete(req,res) {
+    try {
+        if(!req.params.id){
+            return res.status(400).json({
+                errors: ['ID não enviado']
+            })
+        }
+        const {id} = req.params;
+        const user = await User.findByPk(id)
+        const data = req.body
+        if(!user){
+            return res.status(400).json({
+                errors: ['Usuário não encontrado']
+            })
+        }
+        const novosDados = await user.destroy();
+        return res.json(user)
+    }catch(err){
+        return res.status(400).json({
+            errors: err.errors.map(error => error.message)
+        })
+    }  
+}
+*/
