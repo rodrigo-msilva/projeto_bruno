@@ -1,4 +1,3 @@
-
 import jwt from 'jsonwebtoken'
 import User from '../models/User'
 
@@ -31,8 +30,6 @@ class TokenController {
                 errors: ['Usuário desativado']
             })
         }
-
-        
 
         const token = jwt.sign( { id, nome, email, hierarquia, status }, process.env.TOKEN_SECRET, {
             expiresIn: process.env.TOKEN_EXPIRATION,

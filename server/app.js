@@ -21,7 +21,9 @@ const corsOptions = {
         } else {
             cb(new Error('Bloqueado pelo CORS'))
         }
-    }
+    },
+    
+    credentials:true
 }
 
 class App {
