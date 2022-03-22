@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Nav = styled.nav`
     background: none;
     display: flex;
-    padding: 20px;
-    
+    padding: 13px 20px;
+    margin: 0 20px;
     .container-left {
         width: 50%;
-        font-size: 15px;
+        font-size: 15.4px;
         
         .nav-icon {
             float: left;

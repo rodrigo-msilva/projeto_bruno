@@ -9,14 +9,13 @@ export default function Header({username="Rodrigo Matos da Silva"}) {
         <Nav>
             <div className="container-left">
                 <FaUserAlt className="nav-icon user-icon"  />
-                    <p className="nav-icon user-name">{username}</p>
+                <p className="nav-icon user-name">{username}</p>
             </div>
             <div className="container-right">
                 <Link to='/home'className="nav-link">Visões</Link>
                 <Link to='/admin' className="nav-link" >Admin</Link>
             </div>
             <FaSignOutAlt className="nav-link sign-out-icon"/>
-            
         </Nav>
     )
 }

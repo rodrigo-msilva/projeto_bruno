@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { lightGray } from './config/colors'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default createGlobalStyle`
     * {
