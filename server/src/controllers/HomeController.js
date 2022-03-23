@@ -1,15 +1,15 @@
-import User from "../models/User";
+import Logon from "../models/Logons";
 
 class HomeController {
     async index(req, res) {
-        return res.json({
-            tudoCerto: true,
-            id: req.userId,
-            nome: req.username,
-            email: req.userEmail,
-            hierarquia: req.userHierarchy
-        })
-    }
+        try {
+            const logons = await Logon.findAll();
+            return res.json(logons)
+        }catch(err) {
+            console.log(err)
+            return res.json(null)
+        }
+    }    
 }
 
 export default new HomeController();

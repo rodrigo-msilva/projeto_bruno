@@ -4,6 +4,6 @@ import loginRequired from '../middlewares/loginRequired';
 const router = new Router();
 
 router.route('/')
-.get(loginRequired,homeController.index)
+.get(homeController.index)
 
 export default router;

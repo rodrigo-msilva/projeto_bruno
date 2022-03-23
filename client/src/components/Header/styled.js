@@ -18,12 +18,11 @@ export const Nav = styled.nav`
             font-size: 17px;
             margin-right: 8px;
         }
-
-        .user-name {
-            
-            
-        }
     }
+
+    .logo-cc {
+            width: 100px;
+        }
 
     .container-right {
         width: 50%;
@@ -37,8 +36,7 @@ export const Nav = styled.nav`
     }
     
     .sign-out-icon {
-            font-size: 18px;
-            margin: 5px;
+            font-size: 55px;
         }
     
 `

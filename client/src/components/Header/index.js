@@ -2,7 +2,7 @@ import React from "react";
 import { FaSignOutAlt, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import { Nav } from "./styled";
-
+import logo from '../../static/CC.png'
 export default function Header({username="Rodrigo Matos da Silva"}) {
     
     return (
@@ -11,6 +11,7 @@ export default function Header({username="Rodrigo Matos da Silva"}) {
                 <FaUserAlt className="nav-icon user-icon"  />
                 <p className="nav-icon user-name">{username}</p>
             </div>
+            <img src={logo} className="logo-cc" alt=""/>
             <div className="container-right">
                 <Link to='/home'className="nav-link">Visões</Link>
                 <Link to='/admin' className="nav-link" >Admin</Link>

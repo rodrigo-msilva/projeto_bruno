@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-
+import api from '../../services/api'
 import { FaFileCsv } from 'react-icons/fa'
 import { BsFillBarChartFill,BsTable } from 'react-icons/bs'
 
@@ -14,7 +14,17 @@ import TableChart from '../../components/Charts/TableChart';
 
 export default function HomePage() {
     const [icon, setIcon] = useState(true)
+    const [status, setStatus] = useState(false)
     const [titleContainer, setTitleContainer] = useState("Gráfico de Usuários")
+    const [logons, setLogons] = useState({})
+
+    useEffect(() => {
+        api.get('/home').then(response => {
+            setLogons(response.data)
+        })
+    }, [logons.data_hora])
+    
+    
     useEffect(()=> {
         if (!icon) {
             setTitleContainer("Tabela Analítica")
@@ -27,10 +37,15 @@ export default function HomePage() {
         setIcon(!icon)
     }
 
+    const handleStatus = () => {
+        setStatus(!status)
+    }
+
     return (
         <>
             <Header />
             <HomeContainer>
+                <button onClick={handleStatus}>Change</button>
                 <div className='container-header'>
                     <h1>{titleContainer}
                         {
@@ -42,10 +57,10 @@ export default function HomePage() {
                     <hr></hr>
                 </div>
                 {
-                    icon ? <><CardChart /><BarChart /></>
+                    icon ? <><BarChart status={status} /></>
                     : <TableChart />
                 }
-                
+                {JSON.stringify(logons)}
             </HomeContainer>
         </>
     )
