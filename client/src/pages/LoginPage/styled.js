@@ -13,6 +13,15 @@ export const LoginContainer = styled.div`
     width: 380px;
     border-radius: 14px;
     box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%), 0 2px 15px 0 rgb(0 0 0 / 5%);
+    display: inline-block;
+    
+    img{
+        margin-left: 134px;
+        margin-top: -46px;
+        margin-bottom: -10px;
+        height: 100px;
+    }
+
 `
 
 export const Form = styled.form`

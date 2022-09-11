@@ -14,7 +14,7 @@ export default function AdminPage() {
     return (
         <>
             <Header />
-            {user}
+            
         </>
     )
 }

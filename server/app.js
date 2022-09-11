@@ -10,8 +10,8 @@ import user from './src/routes/user'
 import token from './src/routes/token'
 
 const whiteList = [
-    'http://localhost:3000',
-    'http://192.168.15.78:3000'
+    'http://localhost:3005',
+    'http://192.168.15.78:3005'
 ]
 
 const corsOptions = {

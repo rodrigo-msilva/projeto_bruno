@@ -1,22 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaSignOutAlt, FaUserAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Nav } from "./styled";
 import logo from '../../static/CC.png'
-export default function Header({username="Rodrigo Matos da Silva"}) {
+import { useSelector, useDispatch } from "react-redux";
+
+import * as actions from '../../store/modules/auth/actions'
+
+export default function Header() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const username = useSelector(state => {
+        return state.auth.user.nome
+    })
+
     
+
+    const isLogged = useSelector(state => {
+        return state.auth.isLoggedIn
+    })
+
+    function handleLogout(e) {
+        e.preventDefault();
+        dispatch(actions.loginFailure())
+    }
+
+    
+
+
     return (
         <Nav>
+            {
+                isLogged ?
             <div className="container-left">
                 <FaUserAlt className="nav-icon user-icon"  />
                 <p className="nav-icon user-name">{username}</p>
-            </div>
+            </div> : <div className="container-left" />
+            }
+            
             <img src={logo} className="logo-cc" alt=""/>
+            {
+                isLogged ?
+                <> 
             <div className="container-right">
-                <Link to='/home'className="nav-link">Visões</Link>
-                <Link to='/admin' className="nav-link" >Admin</Link>
+                
+                
             </div>
-            <FaSignOutAlt className="nav-link sign-out-icon"/>
+            <Link onClick={handleLogout} to="/login">
+                <FaSignOutAlt style ={{"marginTop":"-3px","color":"GrayText"}}className="nav-link sign-out-icon"/>
+            </Link>
+            
+            </>: <div className="container-right" />
+            }
         </Nav>
     )
 }

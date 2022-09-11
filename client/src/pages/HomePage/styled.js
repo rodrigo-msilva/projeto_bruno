@@ -7,6 +7,7 @@ export const HomeContainer = styled.div`
     height: 100%;
     border-radius: 10px;
     background-color: white;
+    
     .container-header {
         h1 {
         font-family: 'Fredoka', sans-serif;
@@ -29,6 +30,11 @@ export const HomeContainer = styled.div`
             color: ${primaryGreen};
             margin: 0px 20px;
         }
+
+       .period-icon {
+           margin: 4px;
+       }
+            
     }
     
     

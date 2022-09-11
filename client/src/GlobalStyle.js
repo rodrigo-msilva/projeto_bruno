@@ -12,7 +12,8 @@ export default createGlobalStyle`
 
     body {
         font-family: sans-serif;
-        background-color: ${lightGray};
+        //background-color: ${lightGray};
+        background-color: #BBD2C5;
     }
 
     html, body, #root {

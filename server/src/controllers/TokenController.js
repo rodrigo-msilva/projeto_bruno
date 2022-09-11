@@ -6,7 +6,7 @@ class TokenController {
         const { login, senha } = req.body
         
         if(!login || !senha) {
-            return res.satus(401).json({
+            return res.status(401).json({
                 errors: ['Preencha todos os campos']
             });
         }
